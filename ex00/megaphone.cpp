@@ -11,9 +11,9 @@ int main(int ac, char **av) {
     {
         for (int i = 1; i < ac; i++)
         {
-            for (int j = 0; j < strlen(av[i]); j++)
+            for (size_t j = 0; j < strlen(av[i]); j++)
             {
-                std::cout << (char)toupper(argv[i][j]);
+                std::cout << (char)toupper(av[i][j]);
             }
         }
         std::cout << std::endl;

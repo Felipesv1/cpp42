@@ -1,25 +1,24 @@
 # Variáveis
-CXX = c++
+CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = megaphone.cpp
 OBJ = $(SRC:.cpp=.o)
 TARGET = megaphone
 
-
-
-
-# Regra padrão
 all: $(TARGET)
 
-# Regra para criar o executável
 $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $^
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ) 
 
 fclean: clean
-	$(TARGET)
+	rm -rf $(TARGET)
+
 re: fclean all
 
 .PHONY: all clean
