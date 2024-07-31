@@ -41,11 +41,15 @@ int main ()
         }else if (command == "SEARCH")
         {
             phoneBook.displayContacts();
-            std::cout << "Enter the index of the contact to view details: ";
+            std::cout << "Enter the index of the specific Contact: ";
             int index;
-            std::cin >> index;
-            std::cin.ignore();
-            phoneBook.displayContactDetails(index);
+               while (!(std::cin >> index)) {
+                std::cin.clear(); 
+                std::cin.ignore();
+                std::cout << "Invalid input. Please enter a valid index: \n";
+               }
+                std::cin.ignore();
+            phoneBook.displaySpecificContact(index);
         }
         else if (command == "EXIT")
                 break;

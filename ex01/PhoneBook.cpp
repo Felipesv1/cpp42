@@ -43,7 +43,7 @@ void PhoneBook::displayContacts() const {
     }
 }
 
-void PhoneBook::displayContactDetails(int index) const {
+void PhoneBook::displaySpecificContact(int index) const {
     if (index < 0 || index >= contactCount) {
         std::cout << "Invalid index." << std::endl;
         return;
